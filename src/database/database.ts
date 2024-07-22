@@ -1,9 +1,7 @@
 import Technologies from '../types/technologies'
 import User from '../types/user'
 
-const dados: User[] = []
-
-class Database {
+export class Database {
     database: User[]
 
     constructor(database: User[]) {
@@ -84,4 +82,4 @@ class Database {
     }
 }
 
-export default Database
+export const dados: User[] = []
