@@ -117,3 +117,5 @@ class UserController {
         res.status(201).json({status: "Technology removed"})
     }
 }
+
+export default UserController
