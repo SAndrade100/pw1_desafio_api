@@ -8,18 +8,19 @@ class UserController {
 
     addUser(req: Request, res: Response) {
         const db = new Database(dados)
-        const { name, username } : { name: string, username: string } = req.body
+        const { id, name, username } : { id: number, name: string, username: string } = req.body
 
         if(db.findUserByUserName(username) !== -1) {
             return res.status(400).json({error: "User already exists"})
         }
 
         const user: User = {
-            id: Number(uuidv4()),
+            id,
             name,
             username,
             technologies: [] as Technologies[]
         }
+        
         db.addUser(user)
         return res.status(201).json(user)
     }

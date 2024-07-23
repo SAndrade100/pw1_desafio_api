@@ -1,7 +1,6 @@
 import Router from 'express'
 import UserController from '../controller/userController'
 import checkExistUserAccount from '../middleware/checkExistsUserAccount'
-import User from '../types/user'
 
 const router = Router()
 const controller: UserController = new UserController()
